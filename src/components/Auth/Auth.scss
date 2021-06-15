@@ -1,0 +1,36 @@
+.auth {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 0 15.25vw;
+
+  &__title {
+    color: var(--color-black);
+    font-size: 7.5vw;
+    line-height: 1.2;
+    margin: 0;
+    margin-left: -0.5vw;
+
+    b {
+      color: var(--color-red);
+    }
+  }
+
+  &__desc {
+    color: var(--color-gray-dark);
+    font-size: 1.75vw;
+    margin: -1.8vw 0 0;
+  }
+
+  &__buttons {
+    margin-top: 45px;
+
+    display: grid;
+    grid-template-columns: 20vw;
+    grid-auto-rows: min-content;
+    grid-gap: 30px;
+    justify-content: center;
+  }
+}
