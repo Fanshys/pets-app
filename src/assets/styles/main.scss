@@ -5,6 +5,7 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--color-beige);
 }
 
 * {
@@ -18,8 +19,37 @@ ul {
   list-style-type: none;
 }
 
+img {
+  max-width: 100%;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+}
+
+button:focus-visible,
+[type='button']:focus-visible,
+[type='reset']:focus-visible,
+[type='submit']:focus-visible,
+a,
+button,
+input,
+textarea {
+  &:focus-visible {
+    @include outline;
+  }
+}
+
 .page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.container {
+  padding: 0 4vw;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
 }

@@ -24,8 +24,26 @@ function App() {
             layout={LayoutDefault}
           />
 
+          <PrivateRoute
+            path="/pets"
+            component={HomePage}
+            layout={LayoutDefault}
+          />
+
+          <PrivateRoute
+            path="/favorites"
+            component={HomePage}
+            layout={LayoutDefault}
+          />
+
+          <PrivateRoute
+            path="/blog"
+            component={HomePage}
+            layout={LayoutDefault}
+          />
+
           {/* Page with all ui components */}
-          <LayoutDefault path="/ui" component={UiPage} />
+          <PrivateRoute path="/ui" component={UiPage} layout={LayoutDefault} />
         </Switch>
       </main>
     </Router>

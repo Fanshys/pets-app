@@ -1,0 +1,76 @@
+.input {
+  color: var(--color-black);
+
+  &--error {
+    animation: 1.2s ease-in-out 0s normal none running trigger;
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__label {
+    font-weight: 300;
+    font-size: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+
+    transition: all 0.25s;
+
+    pointer-events: none;
+
+    &--hide {
+      top: -5px;
+      left: 5px;
+      transform: translateY(-100%);
+      pointer-events: auto;
+    }
+  }
+
+  &__field {
+    box-shadow: inset var(--shadow);
+    border-radius: var(--border-radius);
+    background: var(--color-white);
+    border: none;
+
+    height: 60px;
+    width: 100%;
+
+    padding-left: 15px;
+
+    font-size: 20px;
+
+    &:focus + .input__label {
+      top: -5px;
+      left: 5px;
+      transform: translateY(-100%);
+    }
+  }
+
+  &__error {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: var(--color-red);
+  }
+}
+
+@keyframes trigger {
+  0%,
+  50%,
+  100% {
+    transform: translate(0);
+  }
+  10%,
+  30% {
+    transform: translate(-2px);
+  }
+  20%,
+  40% {
+    transform: translate(2px);
+  }
+}

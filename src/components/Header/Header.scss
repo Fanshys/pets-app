@@ -1,0 +1,17 @@
+.header {
+  padding: 40px 0;
+
+  &__content {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    grid-gap: 45px;
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-gap: 2vw;
+
+    align-items: center;
+  }
+}
