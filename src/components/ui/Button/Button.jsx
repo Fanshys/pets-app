@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import './Button.scss';
 
-const Button = ({ dark, children, ...rest }) => {
+const Button = ({ dark, children, plus, active, ...rest }) => {
   const classes = ['button'];
 
-  if (dark) {
-    classes.push('button--dark');
-  }
+  if (dark) classes.push('button--dark');
+  if (plus) classes.push('button--plus');
+  if (active) classes.push('button--active');
 
   let Tag = 'button';
   if (rest.to) {
@@ -17,7 +17,7 @@ const Button = ({ dark, children, ...rest }) => {
 
   return (
     <Tag className={classes.join(' ')} {...rest}>
-      {children}
+      {plus ? '' : children}
     </Tag>
   );
 };

@@ -20,7 +20,7 @@
 
   padding: 15px 45px;
 
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, background-color 0.2s;
 
   cursor: pointer;
 
@@ -30,5 +30,66 @@
 
   &--dark {
     background-color: var(--color-gray-dark);
+  }
+
+  &--plus {
+    position: relative;
+    padding: 0;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-red);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      width: 2px;
+      height: 26px;
+
+      background-color: var(--color-white);
+
+      transition: transform 0.2s;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      width: 2px;
+      height: 26px;
+
+      transform: rotate(90deg);
+
+      background-color: var(--color-white);
+
+      transition: transform 0.2s;
+    }
+  }
+
+  &--active {
+    background-color: var(--color-light-black);
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(135deg);
+    }
   }
 }

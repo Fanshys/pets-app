@@ -1,8 +1,47 @@
 .input {
   color: var(--color-black);
+  $this: &;
 
   &--error {
     animation: 1.2s ease-in-out 0s normal none running trigger;
+  }
+
+  &--small {
+    #{$this} {
+      &__label {
+        font-size: 14px;
+      }
+
+      &__field {
+        height: 30px;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+
+      &__error {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &--red {
+    color: var(--color-white);
+
+    #{$this} {
+      &__field {
+        background-color: var(--color-red);
+        color: var(--color-white);
+
+        &::placeholder {
+          color: var(--color-white);
+        }
+
+        &:focus + .input__label,
+        &:valid + .input__label {
+          color: var(--color-black);
+        }
+      }
+    }
   }
 
   &__wrap {
@@ -21,13 +60,6 @@
     transition: all 0.25s;
 
     pointer-events: none;
-
-    &--hide {
-      top: -5px;
-      left: 5px;
-      transform: translateY(-100%);
-      pointer-events: auto;
-    }
   }
 
   &__field {
@@ -39,11 +71,16 @@
     height: 60px;
     width: 100%;
 
-    padding-left: 15px;
+    padding: 0 15px;
 
     font-size: 20px;
 
-    &:focus + .input__label {
+    &::placeholder {
+      color: var(--color-black);
+    }
+
+    &:focus + .input__label,
+    &:valid + .input__label {
       top: -5px;
       left: 5px;
       transform: translateY(-100%);

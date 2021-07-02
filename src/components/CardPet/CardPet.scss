@@ -1,0 +1,23 @@
+.card-pet {
+  &__img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    display: block;
+  }
+
+  &__body {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    align-items: center;
+    grid-gap: 15px;
+  }
+
+  &__name {
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--color-black);
+    margin-bottom: 10px;
+  }
+}

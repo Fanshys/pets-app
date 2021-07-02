@@ -7,8 +7,8 @@ import LayoutEmpty from './layouts/LayoutEmpty';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 import AuthPage from './views/AuthPage/AuthPage.jsx';
-import HomePage from './views/HomePage.jsx';
-import UiPage from './views/UiPage.jsx';
+import HomePage from './views/HomePage/HomePage';
+import UiPage from './views/UiPage/UiPage.jsx';
 
 function App() {
   return (

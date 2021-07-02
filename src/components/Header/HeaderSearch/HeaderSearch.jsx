@@ -1,12 +1,16 @@
+import Input from '../../ui/Input/Input';
 import './HeaderSearch.scss';
 
 const HeaderSearch = () => {
   return (
     <div className="header-search">
       <form className="header-search__form">
-        <input
+        <Input
           type="text"
+          small
+          red
           className="header-search__input"
+          inputClassName="header-search__field"
           placeholder="Search"
         />
         <button type="submit" className="header-search__button">

@@ -24,7 +24,7 @@ const AuthPage = ({ location }) => {
 
   return (
     <div
-      className="page auth-page"
+      className="page page--no-padding auth-page"
       style={{ backgroundImage: `url(${background}` }}
     >
       <Switch>

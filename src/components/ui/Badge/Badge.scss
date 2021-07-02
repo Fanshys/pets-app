@@ -1,0 +1,22 @@
+.badge {
+  padding: 3px 10px;
+
+  border-radius: var(--border-radius-medium);
+
+  font-size: 15px;
+  line-height: 1.1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &--orange {
+    color: var(--color-orange);
+    background-color: var(--color-orange-16);
+  }
+
+  &--purple {
+    color: var(--color-purple);
+    background-color: var(--color-purple-50);
+  }
+}

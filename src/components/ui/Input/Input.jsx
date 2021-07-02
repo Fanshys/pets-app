@@ -1,18 +1,35 @@
 import './Input.scss';
 
-const Input = ({ placeholder, error, register, value, ...rest }) => {
+const Input = ({
+  label,
+  error,
+  register,
+  small,
+  red,
+  className,
+  inputClassName,
+  ...rest
+}) => {
   const classes = ['input'];
-  const labelClasses = ['input__label'];
+  const inputClasses = ['input__field'];
 
-  error && classes.push('input--error');
+  if (error) classes.push('input--error');
+  if (small) classes.push('input--small');
+  if (red) classes.push('input--red');
+  if (className) classes.push(className);
 
-  value && labelClasses.push('input__label--hide');
+  if (inputClassName) inputClasses.push(inputClassName);
 
   return (
     <div className={classes.join(' ')}>
       <div className="input__wrap">
-        <input className="input__field" {...rest} {...register} />
-        <label className={labelClasses.join(' ')}>{placeholder}</label>
+        <input
+          className={inputClasses.join(' ')}
+          {...rest}
+          {...register}
+          required
+        />
+        <label className="input__label">{label}</label>
       </div>
 
       {error && <div className="input__error">{error}</div>}

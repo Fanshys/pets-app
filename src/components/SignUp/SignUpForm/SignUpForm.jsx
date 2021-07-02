@@ -1,14 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { authLogin } from '../../../store/actions';
+import { authLogin } from 'store/actions';
 
-import './LoginForm.scss';
-import Button from '../../ui/Button/Button';
-import Input from '../../ui/Input/Input';
-import Form from '../../ui/Form/Form';
-import { validation } from '../../../helpers/validateErrors';
+import Button from 'components/ui/Button/Button';
+import Input from 'components/ui/Input/Input';
+import Form from 'components/ui/Form/Form';
+import { validation } from 'helpers/validateErrors';
 
-const LoginForm = () => {
+const SignUpForm = () => {
   const dispatch = useDispatch();
   const {
     register,
@@ -16,17 +15,23 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = () => {
     dispatch(authLogin());
   };
 
   return (
     <Form onSubmit={handleSubmit(onSubmitHandler)}>
       <Input
+        error={errors?.name?.message}
+        register={register('name', validation.name)}
+        label="Name"
+      />
+
+      <Input
         error={errors?.email?.message}
         register={register('email', validation.email)}
-        type="email"
         label="Email"
+        type="email"
       />
 
       <Input
@@ -36,9 +41,9 @@ const LoginForm = () => {
         type="password"
       />
 
-      <Button type="submit">Log In</Button>
+      <Button type="submit">Sign Up</Button>
     </Form>
   );
 };
 
-export default LoginForm;
+export default SignUpForm;

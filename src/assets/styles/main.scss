@@ -45,6 +45,11 @@ textarea {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 134px;
+
+  &--no-padding {
+    padding-top: 0;
+  }
 }
 
 .container {

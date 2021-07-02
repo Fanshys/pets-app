@@ -2,24 +2,11 @@
   position: relative;
 
   &__input {
-    height: 30px;
     width: 200px;
+  }
 
-    padding: 0 30px 0 12px;
-
-    box-shadow: inset var(--shadow);
-    background-color: var(--color-red);
-    border: none;
-    border-radius: 10px;
-
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 300;
-
-    &::placeholder {
-      opacity: 0.8;
-    }
+  &__field {
+    padding: 0 25px 0 10px;
   }
 
   &__button {

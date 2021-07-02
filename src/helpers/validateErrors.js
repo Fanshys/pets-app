@@ -1,43 +1,36 @@
 const validation = {
-  login: {
-    rules: {
-      required: true,
-      minLength: 6,
+  name: {
+    required: {
+      value: true,
+      message: 'Name is required',
     },
+    minLength: {
+      value: 6,
+      message: 'Minimum name length is 6',
+    },
+  },
 
-    errors: {
-      required: 'Login is required',
-      minLength: 'Minimum login length is 6',
+  email: {
+    required: {
+      value: true,
+      message: 'Email is required',
+    },
+    pattern: {
+      value: /\S+@\S+\.\S+/,
+      message: 'Entered value does not match email format',
     },
   },
 
   password: {
-    rules: {
-      required: true,
-      minLength: 8,
+    required: {
+      value: true,
+      message: 'Password is required',
     },
-
-    errors: {
-      required: 'Password is required',
-      minLength: 'Minimum password length is 8',
+    minLength: {
+      value: 8,
+      message: 'Minimum password length is 8',
     },
   },
 };
 
-const getErrorText = (errorObj, type) => {
-  const obj = validation[type];
-  if (obj && errorObj) {
-    let error = '';
-
-    for (const prop in obj.errors) {
-      if (errorObj.type === prop) {
-        error = obj.errors[prop];
-        break;
-      }
-    }
-
-    return error || 'The field is filled incorrectly';
-  }
-};
-
-export { validation, getErrorText };
+export { validation };
