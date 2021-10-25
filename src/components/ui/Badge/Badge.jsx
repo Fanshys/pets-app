@@ -1,11 +1,13 @@
+import classNames from 'helpers/classNames';
 import './Badge.scss';
 
 const Badge = ({ name, color }) => {
-  const classes = ['badge'];
+  const classes = classNames({
+    badge: true,
+    [`badge--${color}`]: color,
+  });
 
-  if (color) classes.push(`badge--${color}`);
-
-  return <div className={classes.join(' ')}>{name}</div>;
+  return <div className={classes}>{name}</div>;
 };
 
 export default Badge;

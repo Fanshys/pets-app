@@ -4,7 +4,7 @@ import Card from 'components/ui/Card/Card';
 import { groups } from 'helpers/petGroups';
 import Badge from '../ui/Badge/Badge';
 import Like from '../ui/Like/Like';
-import { getColorByBirthday } from 'helpers/petGroups';
+import getColorByBirthday from 'helpers/getColorByBirthday';
 
 const CardPet = ({
   image,

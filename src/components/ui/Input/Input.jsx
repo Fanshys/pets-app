@@ -1,3 +1,4 @@
+import classNames from 'helpers/classNames';
 import './Input.scss';
 
 const Input = ({
@@ -10,21 +11,24 @@ const Input = ({
   inputClassName,
   ...rest
 }) => {
-  const classes = ['input'];
-  const inputClasses = ['input__field'];
-
-  if (error) classes.push('input--error');
-  if (small) classes.push('input--small');
-  if (red) classes.push('input--red');
-  if (className) classes.push(className);
-
-  if (inputClassName) inputClasses.push(inputClassName);
+  const classes = classNames({
+    input: true,
+    'input--error': error,
+    'input--small': small,
+    'input--red': red,
+    [className]: className,
+  });
+  const inputClasses = classNames({
+    input__field: true,
+    [inputClassName]: inputClassName,
+  });
 
   return (
-    <div className={classes.join(' ')}>
+    <div className={classes}>
       <div className="input__wrap">
         <input
-          className={inputClasses.join(' ')}
+          className={inputClasses}
+          placeholder=" "
           {...rest}
           {...register}
           required
@@ -32,7 +36,7 @@ const Input = ({
         <label className="input__label">{label}</label>
       </div>
 
-      {error && <div className="input__error">{error}</div>}
+      <div className="input__error">{error}</div>
     </div>
   );
 };

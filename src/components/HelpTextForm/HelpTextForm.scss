@@ -1,0 +1,10 @@
+.help-text-form {
+  font-size: 18px;
+  margin: 0;
+
+  &__link {
+    color: var(--color-red);
+    text-decoration: none;
+    font-weight: 500;
+  }
+}

@@ -1,10 +1,7 @@
 .input {
   color: var(--color-black);
+  position: relative;
   $this: &;
-
-  &--error {
-    animation: 1.2s ease-in-out 0s normal none running trigger;
-  }
 
   &--small {
     #{$this} {
@@ -37,9 +34,19 @@
         }
 
         &:focus + .input__label,
-        &:valid + .input__label {
+        &:not(:placeholder-shown) + .input__label {
           color: var(--color-black);
         }
+      }
+    }
+  }
+
+  &--error {
+    #{$this} {
+      &__error {
+        transform: translate(100%, -50%);
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -80,7 +87,7 @@
     }
 
     &:focus + .input__label,
-    &:valid + .input__label {
+    &:not(:placeholder-shown) + .input__label {
       top: -5px;
       left: 5px;
       transform: translateY(-100%);
@@ -88,26 +95,33 @@
   }
 
   &__error {
+    padding-left: 30px;
+    padding-bottom: 5px;
+
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    z-index: 2;
+
+    height: 77px;
+    width: 340px;
+
     font-size: 18px;
     line-height: 1.2;
-    margin-top: 5px;
-    margin-left: 5px;
-    color: var(--color-red);
-  }
-}
+    color: var(--color-white);
 
-@keyframes trigger {
-  0%,
-  50%,
-  100% {
-    transform: translate(0);
-  }
-  10%,
-  30% {
-    transform: translate(-2px);
-  }
-  20%,
-  40% {
-    transform: translate(2px);
+    background-image: url(../../../assets/images/tooltip.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+
+    display: flex;
+    align-items: center;
+
+    transform: translate(97%, -50%);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.25s;
   }
 }

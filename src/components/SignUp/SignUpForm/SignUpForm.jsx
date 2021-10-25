@@ -5,7 +5,7 @@ import { authLogin } from 'store/actions';
 import Button from 'components/ui/Button/Button';
 import Input from 'components/ui/Input/Input';
 import Form from 'components/ui/Form/Form';
-import { validation } from 'helpers/validateErrors';
+import { nameRules, passwordRules, emailRules } from 'helpers/validation';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -23,22 +23,23 @@ const SignUpForm = () => {
     <Form onSubmit={handleSubmit(onSubmitHandler)}>
       <Input
         error={errors?.name?.message}
-        register={register('name', validation.name)}
+        register={register('name', nameRules)}
         label="Name"
       />
 
       <Input
         error={errors?.email?.message}
-        register={register('email', validation.email)}
+        register={register('email', emailRules)}
         label="Email"
         type="email"
       />
 
       <Input
         error={errors?.password?.message}
-        register={register('password', validation.password)}
+        register={register('password', passwordRules)}
         label="Password"
         type="password"
+        className="13212"
       />
 
       <Button type="submit">Sign Up</Button>

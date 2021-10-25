@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import HelpTextForm from 'components/HelpTextForm/HelpTextForm';
 import './SignUp.scss';
 import SignUpForm from './SignUpForm/SignUpForm';
 
@@ -8,12 +8,13 @@ const SignUp = () => {
       <div className="sign-up__content">
         <SignUpForm />
 
-        <p className="sign-up__help">
-          Arleady have an account?{' '}
-          <NavLink to="/auth/login" className="sign-up__help-link">
-            Log In
-          </NavLink>
-        </p>
+        <div className="sign-up__help">
+          <HelpTextForm
+            text="Arleady have an account?"
+            link="/auth/login"
+            linkText="Log In"
+          />
+        </div>
       </div>
     </div>
   );

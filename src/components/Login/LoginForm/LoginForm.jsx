@@ -6,7 +6,7 @@ import './LoginForm.scss';
 import Button from '../../ui/Button/Button';
 import Input from '../../ui/Input/Input';
 import Form from '../../ui/Form/Form';
-import { validation } from '../../../helpers/validateErrors';
+import { passwordRules, emailRules } from '../../../helpers/validation';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -24,14 +24,14 @@ const LoginForm = () => {
     <Form onSubmit={handleSubmit(onSubmitHandler)}>
       <Input
         error={errors?.email?.message}
-        register={register('email', validation.email)}
+        register={register('email', emailRules)}
         type="email"
         label="Email"
       />
 
       <Input
         error={errors?.password?.message}
-        register={register('password', validation.password)}
+        register={register('password', passwordRules)}
         label="Password"
         type="password"
       />
