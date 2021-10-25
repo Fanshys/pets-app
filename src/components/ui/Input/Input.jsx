@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'helpers/classNames';
 import './Input.scss';
 
@@ -39,6 +40,20 @@ const Input = ({
       <div className="input__error">{error}</div>
     </div>
   );
+};
+
+Input.propTypes = {
+  label: PropTypes.string,
+  error: PropTypes.string,
+  small: PropTypes.bool,
+  red: PropTypes.bool,
+  inputClassName: PropTypes.string,
+
+  // register object from useForm (react-hook-form)
+  register: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    ref: PropTypes.func.isRequired,
+  }),
 };
 
 export default Input;

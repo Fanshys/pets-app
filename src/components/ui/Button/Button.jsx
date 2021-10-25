@@ -1,5 +1,7 @@
-import classNames from 'helpers/classNames';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import classNames from 'helpers/classNames';
 import './Button.scss';
 
 const Button = ({ dark, children, plus, active, ...rest }) => {
@@ -23,6 +25,12 @@ const Button = ({ dark, children, plus, active, ...rest }) => {
       {plus ? '' : children}
     </Tag>
   );
+};
+
+Button.propTypes = {
+  dark: PropTypes.bool,
+  plus: PropTypes.bool,
+  active: PropTypes.bool,
 };
 
 export default Button;

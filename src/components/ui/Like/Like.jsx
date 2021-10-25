@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'helpers/classNames';
 import './Like.scss';
 
@@ -13,6 +14,10 @@ const Like = ({ text, active }) => {
       <button className={buttonClasses}></button>
     </div>
   );
+};
+
+Like.propTypes = {
+  active: PropTypes.bool,
 };
 
 export default Like;
