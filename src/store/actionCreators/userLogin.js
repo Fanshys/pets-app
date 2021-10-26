@@ -1,8 +1,8 @@
-import { AUTH_LOGIN } from './types';
+import { USER_LOGIN } from '../actions/user';
 
 export const authLogin = (data) => {
   return {
-    type: AUTH_LOGIN,
+    type: USER_LOGIN,
     payload: data,
   };
 };

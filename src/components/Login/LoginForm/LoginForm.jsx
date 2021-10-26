@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { authLogin } from '../../../store/actions';
+import { authLogin } from 'store/actionCreators/userLogin';
 
 import './LoginForm.scss';
-import Button from '../../ui/Button/Button';
-import Input from '../../ui/Input/Input';
-import Form from '../../ui/Form/Form';
-import { passwordRules, emailRules } from '../../../helpers/validation';
+import Button from 'components/ui/Button/Button';
+import Input from 'components/ui/Input/Input';
+import Form from 'components/ui/Form/Form';
+import { passwordRules, emailRules } from 'helpers/validation';
 
 const LoginForm = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { authLogin } from 'store/actions';
+import { authLogin } from 'store/actionCreators/userLogin';
 
 import Button from 'components/ui/Button/Button';
 import Input from 'components/ui/Input/Input';

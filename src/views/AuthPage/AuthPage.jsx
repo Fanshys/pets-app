@@ -9,7 +9,7 @@ import loginBackground from '../../assets/images/login-background.svg';
 import './AuthPage.scss';
 
 const AuthPage = ({ location }) => {
-  const auth = useSelector((state) => state.auth.auth);
+  const auth = useSelector((state) => state.user.isAuthorized);
   if (auth) {
     return <Redirect to="/" />;
   }
