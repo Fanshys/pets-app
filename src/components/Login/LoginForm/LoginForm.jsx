@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { authLogin } from 'store/actionCreators/userLogin';
+import { userLogin } from 'store/actions/user';
 
 import './LoginForm.scss';
 import Button from 'components/ui/Button/Button';
@@ -16,8 +16,13 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
 
-  const onSubmitHandler = (e) => {
-    dispatch(authLogin());
+  const onSubmitHandler = () => {
+    dispatch(
+      userLogin({
+        login: 'login',
+        password: 'pass',
+      })
+    );
   };
 
   return (

@@ -1,4 +1,4 @@
-import { USER_LOGIN } from '../actions/user';
+import { userTypes } from '../types';
 
 const initialState = {
   isAuthorized: false,
@@ -6,7 +6,7 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case USER_LOGIN:
+    case userTypes.LOGIN:
       return {
         ...state,
         isAuthorized: true,

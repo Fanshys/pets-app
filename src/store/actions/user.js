@@ -1,1 +1,8 @@
-export const USER_LOGIN = 'USER/USER_LOGIN';
+import { userTypes } from '../types';
+
+export const userLogin = (data) => {
+  return {
+    type: userTypes.LOGIN,
+    payload: data,
+  };
+};
