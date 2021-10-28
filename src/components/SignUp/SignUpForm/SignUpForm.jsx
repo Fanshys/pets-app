@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { userLogin } from 'store/actions/user';
+import { userRegister } from 'store/actions/user';
 
 import Button from 'components/ui/Button/Button';
 import Input from 'components/ui/Input/Input';
@@ -15,8 +15,8 @@ const SignUpForm = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
 
-  const onSubmitHandler = () => {
-    dispatch(userLogin());
+  const onSubmitHandler = (e) => {
+    dispatch(userRegister(e.email, e.password));
   };
 
   return (

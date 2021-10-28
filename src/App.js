@@ -1,5 +1,6 @@
 import './assets/styles/main.scss';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import firebase from 'firebase';
 
 import LayoutDefault from './layouts/LayoutDefault';
 import LayoutEmpty from './layouts/LayoutEmpty';
@@ -9,8 +10,18 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthPage from './views/AuthPage/AuthPage.jsx';
 import HomePage from './views/HomePage/HomePage';
 import UiPage from './views/UiPage/UiPage.jsx';
+import { userTypes } from 'store/types';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      dispatch({ type: userTypes.LOGIN_SUCCESS, user });
+    }
+  });
+
   return (
     <Router>
       <main className="main">

@@ -7,6 +7,7 @@ import 'normalize.css';
 import './index.css';
 import App from './App';
 import store from './store/store';
+import './firebase';
 
 render(
   <React.StrictMode>

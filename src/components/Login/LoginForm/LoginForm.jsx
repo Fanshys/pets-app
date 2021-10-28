@@ -16,13 +16,8 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
 
-  const onSubmitHandler = () => {
-    dispatch(
-      userLogin({
-        login: 'login',
-        password: 'pass',
-      })
-    );
+  const onSubmitHandler = (e) => {
+    dispatch(userLogin(e.email, e.password));
   };
 
   return (
