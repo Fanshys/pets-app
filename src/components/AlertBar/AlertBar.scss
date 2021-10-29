@@ -1,0 +1,12 @@
+.alert-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  width: 380px;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}

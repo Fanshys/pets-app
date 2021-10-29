@@ -6,9 +6,15 @@ async function login(login, password) {
       .auth()
       .signInWithEmailAndPassword(login, password);
 
-    return userCredential.user;
+    return {
+      status: true,
+      user: userCredential.user,
+    };
   } catch (error) {
-    console.error(error);
+    return {
+      status: false,
+      errorCode: error.code,
+    };
   }
 }
 

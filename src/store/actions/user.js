@@ -4,8 +4,13 @@ import { userTypes } from '../types';
 export const userLogin = (login, password) => {
   return async (dispatch) => {
     dispatch(request());
-    const user = await userApi.login(login, password);
-    dispatch(success(user));
+    const result = await userApi.login(login, password);
+
+    if (result.status) {
+      dispatch(success(result.user));
+    } else {
+      dispatch(failure());
+    }
   };
 
   function request(user) {
@@ -13,6 +18,9 @@ export const userLogin = (login, password) => {
   }
   function success(user) {
     return { type: userTypes.LOGIN_SUCCESS, user };
+  }
+  function failure(user) {
+    return { type: userTypes.LOGIN_FAILURE, user };
   }
 };
 

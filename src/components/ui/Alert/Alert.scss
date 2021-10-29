@@ -1,0 +1,31 @@
+.alert {
+  border-radius: var(--border-radius);
+
+  border: 3px solid var(--color-green);
+  background-color: var(--color-white);
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: enter .5s forwards;
+
+  &--error {
+    border-color: var(--color-red);
+  }
+
+  &--warning {
+    border-color: var(--color-orange);
+  }
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

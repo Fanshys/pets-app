@@ -12,6 +12,7 @@ import HomePage from './views/HomePage/HomePage';
 import UiPage from './views/UiPage/UiPage.jsx';
 import { userTypes } from 'store/types';
 import { useDispatch } from 'react-redux';
+import AlertBar from 'components/AlertBar/AlertBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -57,6 +58,8 @@ function App() {
           <PrivateRoute path="/ui" component={UiPage} layout={LayoutDefault} />
         </Switch>
       </main>
+
+      <AlertBar />
     </Router>
   );
 }

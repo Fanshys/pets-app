@@ -17,6 +17,8 @@ export const userReducer = (state = initialState, action) => {
         isAuthorized: true,
         user: action.user,
       };
+    case userTypes.LOGIN_FAILURE:
+      return initialState;
 
     case userTypes.REGISTER_REQUEST:
       return {
@@ -34,10 +36,7 @@ export const userReducer = (state = initialState, action) => {
         loading: true,
       };
     case userTypes.LOGOUT_SUCCESS:
-      return {
-        isAuthorized: false,
-        user: {},
-      };
+      return initialState;
     default:
       return state;
   }
