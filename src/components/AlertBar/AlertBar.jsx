@@ -1,8 +1,10 @@
 import Alert from 'components/ui/Alert/Alert';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './AlertBar.scss';
 
-const AlertBar = ({ alerts }) => {
+const AlertBar = () => {
+  const alerts = useSelector((state) => state.alerts);
+
   return (
     <div className="alert-bar">
       {alerts.map((item, key) => (
@@ -12,10 +14,4 @@ const AlertBar = ({ alerts }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    alerts: state.alerts,
-  };
-};
-
-export default connect(mapStateToProps)(AlertBar);
+export default AlertBar;

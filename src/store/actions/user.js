@@ -1,5 +1,6 @@
 import { userApi } from 'api/user.api';
 import { userTypes } from '../types';
+import { alertCreate } from './alert';
 
 export const userLogin = (login, password) => {
   return async (dispatch) => {
@@ -10,6 +11,7 @@ export const userLogin = (login, password) => {
       dispatch(success(result.user));
     } else {
       dispatch(failure());
+      dispatch(alertCreate('Failure login', 'error'));
     }
   };
 
