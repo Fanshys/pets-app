@@ -29,6 +29,8 @@ export const userReducer = (state = initialState, action) => {
         isAuthorized: true,
         user: action.user,
       };
+    case userTypes.REGISTER_FAILURE:
+      return initialState;
 
     case userTypes.LOGOUT_REQUEST:
       return {

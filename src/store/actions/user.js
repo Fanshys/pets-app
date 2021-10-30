@@ -1,17 +1,21 @@
 import { userApi } from 'api/user.api';
+import { getErrorTextByType } from 'helpers/getErrorTextByType';
 import { userTypes } from '../types';
 import { alertCreate } from './alert';
 
-export const userLogin = (login, password) => {
+export const userLogin = (email, password) => {
   return async (dispatch) => {
     dispatch(request());
-    const result = await userApi.login(login, password);
+
+    const result = await userApi.login(email, password);
 
     if (result.status) {
       dispatch(success(result.user));
     } else {
+      const text = getErrorTextByType(result.errorCode);
+
       dispatch(failure());
-      dispatch(alertCreate('Failure login', 'error'));
+      dispatch(alertCreate(text, 'error'));
     }
   };
 
@@ -26,11 +30,20 @@ export const userLogin = (login, password) => {
   }
 };
 
-export const userRegister = (login, password) => {
+export const userRegister = (email, password) => {
   return async (dispatch) => {
     dispatch(request());
-    const user = await userApi.register(login, password);
-    dispatch(success(user));
+
+    const result = await userApi.register(email, password);
+
+    if (result.status) {
+      dispatch(success(result.user));
+    } else {
+      const text = getErrorTextByType(result.errorCode);
+
+      dispatch(failure());
+      dispatch(alertCreate(text, 'error'));
+    }
   };
 
   function request(user) {
@@ -38,6 +51,9 @@ export const userRegister = (login, password) => {
   }
   function success(user) {
     return { type: userTypes.REGISTER_SUCCESS, user };
+  }
+  function failure(user) {
+    return { type: userTypes.REGISTER_FAILURE, user };
   }
 };
 
