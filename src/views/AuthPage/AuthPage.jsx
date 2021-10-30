@@ -7,19 +7,25 @@ import Auth from '../../components/Auth/Auth';
 import authBackground from '../../assets/images/auth-background.svg';
 import loginBackground from '../../assets/images/login-background.svg';
 import './AuthPage.scss';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const AuthPage = ({ location }) => {
+  const [background, setBackground] = useState(authBackground);
+
+  useEffect(() => {
+    if (
+      location.pathname === '/auth/login' ||
+      location.pathname === '/auth/signup'
+    ) {
+      setBackground(loginBackground);
+    }
+  }, [location]);
+
   const auth = useSelector((state) => state.user.isAuthorized);
+
   if (auth) {
     return <Redirect to="/" />;
-  }
-
-  let background = authBackground;
-  if (
-    location.pathname === '/auth/login' ||
-    location.pathname === '/auth/signup'
-  ) {
-    background = loginBackground;
   }
 
   return (

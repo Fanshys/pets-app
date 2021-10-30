@@ -13,15 +13,20 @@ import UiPage from './views/UiPage/UiPage.jsx';
 import { userTypes } from 'store/types';
 import { useDispatch } from 'react-redux';
 import AlertBar from 'components/AlertBar/AlertBar';
+import { useEffect } from 'react';
 
 function App() {
   const dispatch = useDispatch();
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      dispatch({ type: userTypes.LOGIN_SUCCESS, user });
-    }
-  });
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch({ type: userTypes.LOGIN_SUCCESS, user });
+      } else {
+        dispatch({ type: userTypes.LOGOUT_SUCCESS });
+      }
+    });
+  }, [dispatch]);
 
   return (
     <Router>

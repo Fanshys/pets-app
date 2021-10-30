@@ -1,10 +1,19 @@
 import { userTypes } from '../types';
 
-const initialState = {
+const baseState = {
   isAuthorized: false,
   user: {},
   loading: false,
 };
+
+let initialState = baseState;
+
+if (localStorage.getItem('user')) {
+  initialState = {
+    user: JSON.parse(localStorage.getItem('user')),
+    isAuthorized: true,
+  };
+}
 
 export const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -18,7 +27,7 @@ export const userReducer = (state = initialState, action) => {
         user: action.user,
       };
     case userTypes.LOGIN_FAILURE:
-      return initialState;
+      return baseState;
 
     case userTypes.REGISTER_REQUEST:
       return {
@@ -30,7 +39,7 @@ export const userReducer = (state = initialState, action) => {
         user: action.user,
       };
     case userTypes.REGISTER_FAILURE:
-      return initialState;
+      return baseState;
 
     case userTypes.LOGOUT_REQUEST:
       return {
@@ -38,7 +47,7 @@ export const userReducer = (state = initialState, action) => {
         loading: true,
       };
     case userTypes.LOGOUT_SUCCESS:
-      return initialState;
+      return baseState;
     default:
       return state;
   }

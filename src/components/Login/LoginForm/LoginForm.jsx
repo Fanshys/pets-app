@@ -10,6 +10,7 @@ import { passwordRules, emailRules } from 'helpers/validation';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
