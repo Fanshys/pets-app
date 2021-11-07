@@ -1,6 +1,6 @@
 import './HomePage.scss';
 
-const HomePage = () => {
+const HomePage = (): JSX.Element => {
   return (
     <div className="home-page page">
       <div className="container">

@@ -7,9 +7,9 @@ import CardPet from 'components/CardPet/CardPet';
 import bob from 'assets/images/bob.jpg';
 import Badge from 'components/ui/Badge/Badge';
 
-const nav = ['buttons', 'inputs', 'cards', 'badges'];
+const nav: Array<string> = ['buttons', 'inputs', 'cards', 'badges'];
 
-const UiPage = () => {
+const UiPage = (): JSX.Element => {
   return (
     <div className="page ui-page">
       <div className="container">
@@ -62,6 +62,7 @@ const UiPage = () => {
               group="2"
               likes="9999"
               isLiked
+              isFavorite={false}
               birthday="2021-05-06"
             />
             <CardPet

@@ -10,7 +10,7 @@ interface ButtonPropsInterface {
   to?: string;
   href?: string;
   className?: string;
-  children?: JSX.Element | Array<JSX.Element>;
+  children?: string | JSX.Element | Array<JSX.Element>;
 }
 
 const Button = ({

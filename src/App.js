@@ -7,9 +7,9 @@ import LayoutEmpty from './layouts/LayoutEmpty';
 
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
-import AuthPage from './views/AuthPage/AuthPage.jsx';
+import AuthPage from './views/AuthPage/AuthPage';
 import HomePage from './views/HomePage/HomePage';
-import UiPage from './views/UiPage/UiPage.jsx';
+import UiPage from './views/UiPage/UiPage';
 import { userTypes } from 'store/types';
 import { useDispatch } from 'react-redux';
 import AlertBar from 'components/AlertBar/AlertBar';

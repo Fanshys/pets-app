@@ -1,4 +1,8 @@
-export const userTypes = {
+interface objectTypesInterface {
+  [key: string]: string;
+}
+
+export const userTypes: objectTypesInterface = {
   LOGIN_SUCCESS: 'USER_LOGIN_SUCCESS',
   LOGIN_FAILURE: 'USER_LOGIN_FAILURE',
   LOGIN_REQUEST: 'USER_LOGIN_REQUEST',
@@ -12,7 +16,7 @@ export const userTypes = {
   LOGOUT_REQUEST: 'USER_LOGOUT_REQUEST',
 };
 
-export const alertTypes = {
+export const alertTypes: objectTypesInterface = {
   CREATE: 'ALERT_CREATE',
   REMOVE: 'ALERT_REMOVE',
 };

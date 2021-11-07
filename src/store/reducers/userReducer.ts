@@ -1,21 +1,35 @@
 import { userTypes } from '../types';
 
-const baseState = {
+interface userStateInterface {
+  isAuthorized?: boolean;
+  user?: object;
+  loading?: boolean;
+}
+
+interface userReducerActionInterface {
+  type: string;
+  user?: object;
+}
+
+const baseState: userStateInterface = {
   isAuthorized: false,
   user: {},
   loading: false,
 };
 
-let initialState = baseState;
+let initialState: userStateInterface = baseState;
 
 if (localStorage.getItem('user')) {
   initialState = {
-    user: JSON.parse(localStorage.getItem('user')),
+    user: JSON.parse(localStorage.getItem('user') || ''),
     isAuthorized: true,
   };
 }
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (
+  state: userStateInterface = initialState,
+  action: userReducerActionInterface
+): userStateInterface => {
   switch (action.type) {
     case userTypes.LOGIN_REQUEST:
       return {

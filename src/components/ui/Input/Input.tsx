@@ -8,7 +8,7 @@ interface InputPropsInterface {
   small?: boolean;
   red?: boolean;
   className?: string;
-  inputClassName: string;
+  inputClassName?: string;
 }
 
 const Input = ({
@@ -18,7 +18,7 @@ const Input = ({
   small,
   red,
   className = '',
-  inputClassName,
+  inputClassName = '',
   ...rest
 }: InputPropsInterface): JSX.Element => {
   const classes = classNames({

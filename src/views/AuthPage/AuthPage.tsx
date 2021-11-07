@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import { Redirect, Switch, Route } from 'react-router-dom';
 
 import Login from '../../components/Login/Login';
@@ -9,8 +8,16 @@ import loginBackground from '../../assets/images/login-background.svg';
 import './AuthPage.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { RootState } from 'store/store';
+import { useAppSelector } from 'hooks';
 
-const AuthPage = ({ location }) => {
+interface AuthPagePropsInterface {
+  location: {
+    pathname: string;
+  };
+}
+
+const AuthPage = ({ location }: AuthPagePropsInterface): JSX.Element => {
   const [background, setBackground] = useState(authBackground);
 
   useEffect(() => {
@@ -24,7 +31,7 @@ const AuthPage = ({ location }) => {
     }
   }, [location]);
 
-  const auth = useSelector((state) => state.user.isAuthorized);
+  const auth = useAppSelector((state: RootState) => state.user.isAuthorized);
 
   if (auth) {
     return <Redirect to="/" />;
