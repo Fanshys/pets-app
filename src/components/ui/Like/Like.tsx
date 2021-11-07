@@ -4,11 +4,21 @@ import './Like.scss';
 interface LikePropsInterface {
   active?: boolean;
   text: string | JSX.Element | Array<JSX.Element>;
+  className?: string;
 }
 
-const Like = ({ text, active }: LikePropsInterface): JSX.Element => {
+const Like = ({
+  text,
+  active,
+  className = '',
+}: LikePropsInterface): JSX.Element => {
   return (
-    <div className="like">
+    <div
+      className={classNames({
+        like: true,
+        [className]: className,
+      })}
+    >
       <div className="like__text">{text}</div>
       <button
         className={classNames({

@@ -19,8 +19,9 @@ const Button = ({
   plus,
   active,
   className = '',
-  ...rest
-}: ButtonPropsInterface) => {
+  to = '',
+  href = '',
+}: ButtonPropsInterface): JSX.Element => {
   const classes = classNames({
     button: true,
     'button--dark': dark,
@@ -31,19 +32,15 @@ const Button = ({
 
   let Tag;
 
-  if (rest.to) {
+  if (to) {
     Tag = Link;
-  } else if (rest.href) {
+  } else if (href) {
     Tag = 'a' as keyof JSX.IntrinsicElements;
   } else {
     Tag = 'button' as keyof JSX.IntrinsicElements;
   }
 
-  return (
-    <Tag className={classes} {...rest}>
-      {plus ? '' : children}
-    </Tag>
-  );
+  return <Tag className={classes}>{plus ? '' : children}</Tag>;
 };
 
 export default Button;

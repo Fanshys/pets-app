@@ -6,7 +6,10 @@ interface FormPropsInterface {
   className?: string;
 }
 
-const Form = ({ children, className = '' }: FormPropsInterface) => {
+const Form = ({
+  children,
+  className = '',
+}: FormPropsInterface): JSX.Element => {
   return (
     <form
       className={classNames({
