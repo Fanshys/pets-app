@@ -21,6 +21,7 @@ const Button = ({
   className = '',
   to = '',
   href = '',
+  ...rest
 }: ButtonPropsInterface): JSX.Element => {
   const classes = classNames({
     button: true,
@@ -40,7 +41,16 @@ const Button = ({
     Tag = 'button' as keyof JSX.IntrinsicElements;
   }
 
-  return <Tag className={classes}>{plus ? '' : children}</Tag>;
+  return (
+    <Tag
+      className={classes}
+      to={to || undefined}
+      href={href || undefined}
+      {...rest}
+    >
+      {plus ? '' : children}
+    </Tag>
+  );
 };
 
 export default Button;

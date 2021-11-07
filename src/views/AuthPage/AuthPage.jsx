@@ -19,6 +19,8 @@ const AuthPage = ({ location }) => {
       location.pathname === '/auth/signup'
     ) {
       setBackground(loginBackground);
+    } else {
+      setBackground(authBackground);
     }
   }, [location]);
 

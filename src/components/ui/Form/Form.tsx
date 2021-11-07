@@ -9,15 +9,15 @@ interface FormPropsInterface {
 const Form = ({
   children,
   className = '',
+  ...rest
 }: FormPropsInterface): JSX.Element => {
+  const classes = classNames({
+    form: true,
+    [className]: className,
+  });
+
   return (
-    <form
-      className={classNames({
-        form: true,
-        [className]: className,
-      })}
-      noValidate
-    >
+    <form className={classes} noValidate {...rest}>
       {children}
     </form>
   );

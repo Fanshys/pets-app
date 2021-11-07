@@ -10,16 +10,12 @@ const Card = ({
   children,
   className = '',
 }: CardPropsInterface): JSX.Element => {
-  return (
-    <div
-      className={classNames({
-        card: true,
-        [className]: className,
-      })}
-    >
-      {children}
-    </div>
-  );
+  const classes = classNames({
+    card: true,
+    [className]: className,
+  });
+
+  return <div className={classes}>{children}</div>;
 };
 
 export default Card;

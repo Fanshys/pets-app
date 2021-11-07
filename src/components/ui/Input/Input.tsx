@@ -21,22 +21,24 @@ const Input = ({
   inputClassName,
   ...rest
 }: InputPropsInterface): JSX.Element => {
+  const classes = classNames({
+    input: true,
+    'input--error': error,
+    'input--small': small,
+    'input--red': red,
+    [className]: className,
+  });
+
+  const inputClasses = classNames({
+    input__field: true,
+    [inputClassName]: inputClassName,
+  });
+
   return (
-    <div
-      className={classNames({
-        input: true,
-        'input--error': error,
-        'input--small': small,
-        'input--red': red,
-        [className]: className,
-      })}
-    >
+    <div className={classes}>
       <div className="input__wrap">
         <input
-          className={classNames({
-            input__field: true,
-            [inputClassName]: inputClassName,
-          })}
+          className={inputClasses}
           placeholder=" "
           {...rest}
           {...register}

@@ -12,17 +12,13 @@ const Badge = ({
   color,
   className = '',
 }: BadgePropsInterface): JSX.Element => {
-  return (
-    <div
-      className={classNames({
-        badge: true,
-        [`badge--${color}`]: color,
-        [className]: className,
-      })}
-    >
-      {name}
-    </div>
-  );
+  const classes = classNames({
+    badge: true,
+    [`badge--${color}`]: color,
+    [className]: className,
+  });
+
+  return <div className={classes}>{name}</div>;
 };
 
 export default Badge;

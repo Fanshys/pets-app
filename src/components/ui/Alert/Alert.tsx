@@ -13,14 +13,14 @@ function Alert({
   text,
   className = '',
 }: AlertPropsInterface): JSX.Element {
+  const classes = classNames({
+    alert: true,
+    ['alert--' + type]: type,
+    [className]: className,
+  });
+
   return (
-    <div
-      className={classNames({
-        alert: true,
-        ['alert--' + type]: type,
-        [className]: className,
-      })}
-    >
+    <div className={classes}>
       <Card>{text}</Card>
     </div>
   );

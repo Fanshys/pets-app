@@ -1,0 +1,7 @@
+.like {
+  &__button {
+    &--active {
+      background-color: red;
+    }
+  }
+}
