@@ -26,6 +26,7 @@ const LoginForm = () => {
       <Input
         error={errors?.email?.message}
         register={register('email', emailRules)}
+        name="email"
         type="email"
         label="Email"
       />
@@ -33,6 +34,7 @@ const LoginForm = () => {
       <Input
         error={errors?.password?.message}
         register={register('password', passwordRules)}
+        name="password"
         label="Password"
         type="password"
       />
