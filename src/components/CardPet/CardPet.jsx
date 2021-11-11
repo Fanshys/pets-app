@@ -28,7 +28,7 @@ const CardPet = ({
             <div className="card-pet__name">{name}</div>
             <Badge name={groups[group]} color={getColorByBirthday(birthday)} />
           </div>
-          {likes && <Like text={`${likes} like`} active={isLiked} />}
+          {likes && <Like count={likes} active={isLiked} />}
         </div>
       </div>
     </Card>

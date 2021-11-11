@@ -19,8 +19,6 @@ const Button = ({
   plus,
   active,
   className = '',
-  to = '',
-  href = '',
   ...rest
 }: ButtonPropsInterface): JSX.Element => {
   const classes = classNames({
@@ -33,21 +31,16 @@ const Button = ({
 
   let Tag;
 
-  if (to) {
+  if (rest.to) {
     Tag = Link;
-  } else if (href) {
+  } else if (rest.href) {
     Tag = 'a' as keyof JSX.IntrinsicElements;
   } else {
     Tag = 'button' as keyof JSX.IntrinsicElements;
   }
 
   return (
-    <Tag
-      className={classes}
-      to={to || undefined}
-      href={href || undefined}
-      {...rest}
-    >
+    <Tag className={classes} {...rest}>
       {plus ? '' : children}
     </Tag>
   );

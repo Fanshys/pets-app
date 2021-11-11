@@ -1,7 +1,45 @@
 .like {
+  width: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__text {
+    white-space: nowrap;
+
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
   &__button {
+    border: none;
+    background: transparent;
+
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      transition: fill .3s;
+      fill: transparent;
+    }
+
+    &:hover {
+      svg {
+        fill: var(--color-red-50);
+      }
+    }
+
     &--active {
-      background-color: red;
+      svg {
+        fill: var(--color-red)
+      }
     }
   }
 }

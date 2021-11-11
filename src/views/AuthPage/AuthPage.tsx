@@ -1,10 +1,10 @@
 import { Redirect, Switch, Route } from 'react-router-dom';
 
-import Login from '../../components/Login/Login';
-import SignUp from '../../components/SignUp/SignUp';
-import Auth from '../../components/Auth/Auth';
-import authBackground from '../../assets/images/auth-background.svg';
-import loginBackground from '../../assets/images/login-background.svg';
+import Login from 'components/Login/Login';
+import SignUp from 'components/SignUp/SignUp';
+import Auth from 'components/Auth/Auth';
+import authBackground from 'assets/images/auth-background.svg';
+import loginBackground from 'assets/images/login-background.svg';
 import './AuthPage.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
