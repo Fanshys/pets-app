@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import './CardPet.scss';
 import Button from 'components/ui/Button/Button';
 import Card from 'components/ui/Card/Card';
@@ -6,6 +5,16 @@ import { groups } from 'helpers/petGroups';
 import Badge from '../ui/Badge/Badge';
 import Like from '../ui/Like/Like';
 import getColorByBirthday from 'helpers/getColorByBirthday';
+
+interface CardPetPropsInterface {
+  image: string;
+  name: string;
+  likes: number;
+  isLiked: boolean;
+  isFavorite: boolean;
+  group: number;
+  birthday: string; // YYYY-MM-DD
+}
 
 const CardPet = ({
   image,
@@ -15,7 +24,7 @@ const CardPet = ({
   isFavorite,
   group,
   birthday,
-}) => {
+}: CardPetPropsInterface) => {
   return (
     <Card>
       <div className="card-pet">
@@ -33,21 +42,6 @@ const CardPet = ({
       </div>
     </Card>
   );
-};
-
-CardPet.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  likes: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  isLiked: PropTypes.bool,
-  group: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  birthday: function (props, propName, componentName) {
-    if (!/\d{4}-\d{2}-\d{2}/.test(props[propName])) {
-      return new Error(`
-        Invalid ${propName} prop in component ${componentName}. Valid format: YYYY-MM-DD.
-      `);
-    }
-  },
 };
 
 export default CardPet;
