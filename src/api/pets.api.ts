@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 import { getApiErrorCode } from 'helpers/apiError';
 
-interface PetInterface {
+export interface PetInterface {
   about: string;
   age: string;
   groupID: number;
@@ -14,7 +14,7 @@ interface PetInterface {
   weight: string;
 }
 
-interface PetListInterface {
+export interface PetListInterface {
   [key: string]: PetInterface;
 }
 
@@ -26,7 +26,7 @@ interface getPetsResponseInterface {
 
 async function getPets(): Promise<getPetsResponseInterface> {
   try {
-    const ref = firebase.database().ref('animalss');
+    const ref = firebase.database().ref('animals');
     const result = await ref.once('value');
 
     return {

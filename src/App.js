@@ -14,6 +14,7 @@ import { userTypes } from 'store/types';
 import { useDispatch } from 'react-redux';
 import AlertBar from 'components/AlertBar/AlertBar';
 import { useEffect } from 'react';
+import PetsPage from 'views/PetsPage/PetsPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function App() {
 
           <PrivateRoute
             path="/pets"
-            component={HomePage}
+            component={PetsPage}
             layout={LayoutDefault}
           />
 

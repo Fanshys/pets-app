@@ -1,0 +1,12 @@
+.pets-page {
+  &__grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding-bottom: 90px;
+  }
+  &__column {
+    display: grid;
+    grid-gap: 30px;
+  }
+}

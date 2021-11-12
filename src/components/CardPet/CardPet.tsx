@@ -5,7 +5,6 @@ import { groups } from 'helpers/petGroups';
 import Badge from '../ui/Badge/Badge';
 import Like from '../ui/Like/Like';
 import getColorByBirthday from 'helpers/getColorByBirthday';
-import { petsApi } from 'api/pets.api';
 
 interface CardPetPropsInterface {
   image: string;
@@ -32,7 +31,7 @@ const CardPet = ({
         <div className="card-pet__img-wrap">
           <img src={image} alt="" className="card-pet__img" />
         </div>
-        <div className="card-pet__body" onClick={petsApi.getPets}>
+        <div className="card-pet__body">
           <Button plus active={isFavorite} />
           <div className="card-pet__info">
             <div className="card-pet__name">{name}</div>

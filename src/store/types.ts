@@ -20,3 +20,9 @@ export const alertTypes: objectTypesInterface = {
   CREATE: 'ALERT_CREATE',
   REMOVE: 'ALERT_REMOVE',
 };
+
+export const petsTypes: objectTypesInterface = {
+  GET_SUCCESS: 'PETS_GET_SUCCESS',
+  GET_FAILURE: 'PETS_GET_FAILURE',
+  GET_REQUEST: 'PETS_GET_REQUEST',
+};
