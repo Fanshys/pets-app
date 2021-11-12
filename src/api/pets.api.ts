@@ -1,0 +1,46 @@
+import firebase from 'firebase';
+import { getApiErrorCode } from 'helpers/apiError';
+
+interface PetInterface {
+  about: string;
+  age: string;
+  groupID: number;
+  img: string;
+  likes: number;
+  location: string;
+  name: string;
+  sex: boolean;
+  type: string;
+  weight: string;
+}
+
+interface PetListInterface {
+  [key: string]: PetInterface;
+}
+
+interface getPetsResponseInterface {
+  status: boolean;
+  errorCode?: string;
+  pets?: PetListInterface;
+}
+
+async function getPets(): Promise<getPetsResponseInterface> {
+  try {
+    const ref = firebase.database().ref('animalss');
+    const result = await ref.once('value');
+
+    return {
+      status: true,
+      pets: result.val(),
+    };
+  } catch (error) {
+    return {
+      status: false,
+      errorCode: getApiErrorCode(error),
+    };
+  }
+}
+
+export const petsApi = {
+  getPets: getPets,
+};

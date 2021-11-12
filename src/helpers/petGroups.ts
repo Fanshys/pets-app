@@ -1,5 +1,5 @@
 interface groupsInterface {
-  [key: number]: string;
+  [key: string]: string;
 }
 
 const groups: groupsInterface = {

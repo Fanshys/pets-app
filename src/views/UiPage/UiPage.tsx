@@ -60,7 +60,7 @@ const UiPage = (): JSX.Element => {
               image={bob}
               name="Bob"
               group="2"
-              likes="9999"
+              likes={9999}
               isLiked
               isFavorite={false}
               birthday="2021-05-06"
@@ -69,8 +69,9 @@ const UiPage = (): JSX.Element => {
               image={bob}
               name="Bob"
               group="2"
-              likes="9999"
+              likes={9999}
               isFavorite
+              isLiked={false}
               birthday="2020-05-06"
             />
           </div>
