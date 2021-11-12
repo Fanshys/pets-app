@@ -24,7 +24,7 @@ interface getPetsResponseInterface {
   pets?: PetListInterface;
 }
 
-async function getPets(): Promise<getPetsResponseInterface> {
+async function getAll(): Promise<getPetsResponseInterface> {
   try {
     const ref = firebase.database().ref('animals');
     const result = await ref.once('value');
@@ -42,5 +42,5 @@ async function getPets(): Promise<getPetsResponseInterface> {
 }
 
 export const petsApi = {
-  getPets: getPets,
+  getAll: getAll,
 };

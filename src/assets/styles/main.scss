@@ -28,15 +28,17 @@ input::-moz-focus-inner {
   border: 0;
 }
 
-button:focus-visible,
-[type='button']:focus-visible,
-[type='reset']:focus-visible,
-[type='submit']:focus-visible,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
 a,
 button,
 input,
-textarea {
-  &:focus-visible {
+textarea,
+.focus-outline {
+  &:focus-visible,
+  &:focus-within {
     @include outline;
   }
 }
@@ -57,4 +59,12 @@ textarea {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
+}
+
+.hidden-visible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }

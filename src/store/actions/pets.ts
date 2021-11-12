@@ -7,7 +7,7 @@ export const getPets = () => {
   return async (dispatch: Function) => {
     dispatch(request());
 
-    const result = await petsApi.getPets();
+    const result = await petsApi.getAll();
 
     if (result.status && result.pets) {
       dispatch(success(result.pets));
