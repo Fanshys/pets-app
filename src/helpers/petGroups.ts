@@ -8,6 +8,7 @@ const groups: groupsInterface = {
   3: 'Bird',
   4: 'Rabbit',
   5: 'Hamster',
+  6: 'Other',
 };
 
 export { groups };

@@ -16,7 +16,7 @@ const SignUpForm = () => {
   } = useForm({ mode: 'all' });
 
   const onSubmitHandler = (e) => {
-    dispatch(userRegister(e.email, e.password));
+    dispatch(userRegister(e.email, e.password, e.name));
   };
 
   return (

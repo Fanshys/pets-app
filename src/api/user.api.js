@@ -18,23 +18,39 @@ async function login(login, password) {
   }
 }
 
-async function register(login, password) {
+async function register(login, password, name) {
   try {
     const userCredential = await firebase
       .auth()
       .createUserWithEmailAndPassword(login, password);
 
-    console.log(userCredential);
+    const ref = firebase.database().ref(`users/${userCredential.user.uid}`);
+    ref.set({ name: name });
+
+    return {
+      status: true,
+      user: userCredential.user,
+    };
   } catch (error) {
-    console.error(error);
+    return {
+      status: false,
+      errorCode: error.code,
+    };
   }
 }
 
-function logout() {
+async function logout() {
   try {
-    return firebase.auth().signOut();
+    await firebase.auth().signOut();
+
+    return {
+      status: true,
+    };
   } catch (error) {
-    console.error(error);
+    return {
+      status: false,
+      errorCode: error.code,
+    };
   }
 }
 

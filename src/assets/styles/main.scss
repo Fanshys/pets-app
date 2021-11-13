@@ -35,7 +35,12 @@ button,
 a,
 button,
 input,
-textarea,
+textarea {
+  &:focus-visible {
+    @include outline;
+  }
+}
+
 .focus-outline {
   &:focus-visible,
   &:focus-within {

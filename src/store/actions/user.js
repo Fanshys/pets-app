@@ -31,11 +31,11 @@ export const userLogin = (email, password) => {
   }
 };
 
-export const userRegister = (email, password) => {
+export const userRegister = (email, password, name) => {
   return async (dispatch) => {
     dispatch(request());
 
-    const result = await userApi.register(email, password);
+    const result = await userApi.register(email, password, name);
 
     if (result.status) {
       localStorage.setItem('user', JSON.stringify(result.user));

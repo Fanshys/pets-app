@@ -10,6 +10,7 @@ interface CheckCardPropsInterface {
   className?: string;
   img?: string;
   text: string;
+  value: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -21,6 +22,7 @@ const CheckCard = ({
   disabled = false,
   className = '',
   img,
+  value,
   onChange = () => {},
 }: CheckCardPropsInterface): JSX.Element => {
   const classes = classNames({
@@ -38,6 +40,7 @@ const CheckCard = ({
         type={type}
         name={name}
         checked={checked}
+        value={value}
         disabled={disabled}
         onChange={onChange}
       />
