@@ -1,8 +1,8 @@
 import classNames from 'helpers/classNames';
+import { ReactInputProps } from 'helpers/htmlPropTypes';
 import './Input.scss';
 
-interface InputPropsInterface
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputPropsInterface extends ReactInputProps {
   label?: string | JSX.Element | Array<JSX.Element>;
   error?: string;
   register?: object;
@@ -18,7 +18,6 @@ const Input = ({
   small,
   red,
   className = '',
-  inputClassName = '',
   ...rest
 }: InputPropsInterface): JSX.Element => {
   const classes = classNames({
@@ -29,16 +28,11 @@ const Input = ({
     [className]: className,
   });
 
-  const inputClasses = classNames({
-    input__field: true,
-    [inputClassName]: inputClassName,
-  });
-
   return (
     <div className={classes}>
       <div className="input__wrap">
         <input
-          className={inputClasses}
+          className="input__field"
           placeholder=" "
           {...rest}
           {...register}

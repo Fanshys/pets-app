@@ -1,8 +1,9 @@
 import './Alert.scss';
 import Card from '../Card/Card';
 import classNames from 'helpers/classNames';
+import { ReactDivProps } from 'helpers/htmlPropTypes';
 
-interface AlertPropsInterface extends React.HTMLAttributes<HTMLDivElement> {
+interface AlertPropsInterface extends ReactDivProps {
   type?: 'error' | 'warning';
 }
 

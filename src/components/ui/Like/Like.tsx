@@ -1,10 +1,10 @@
 import classNames from 'helpers/classNames';
+import { ReactDivProps } from 'helpers/htmlPropTypes';
 import './Like.scss';
 
-interface LikePropsInterface {
+interface LikePropsInterface extends ReactDivProps {
   active?: boolean;
   count: number;
-  className?: string;
 }
 
 const Like = ({

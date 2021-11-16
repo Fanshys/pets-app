@@ -3,10 +3,10 @@ import Masonry from 'react-masonry-css';
 import CardPet from 'components/CardPet/CardPet';
 import { PetListInterface } from 'api/pets.api';
 import classNames from 'helpers/classNames';
+import { ReactDivProps } from 'helpers/htmlPropTypes';
 
-interface PetsListPropsInterface {
+interface PetsListPropsInterface extends ReactDivProps {
   items: PetListInterface;
-  className?: string;
 }
 
 const PetsList = ({

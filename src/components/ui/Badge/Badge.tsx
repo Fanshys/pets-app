@@ -1,8 +1,9 @@
 import classNames from 'helpers/classNames';
 import { colors } from 'helpers/getColorByBirthday';
+import { ReactDivProps } from 'helpers/htmlPropTypes';
 import './Badge.scss';
 
-interface BadgePropsInterface extends React.HTMLAttributes<HTMLDivElement> {
+interface BadgePropsInterface extends ReactDivProps {
   name: string;
   color: colors;
 }

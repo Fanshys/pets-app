@@ -5,8 +5,9 @@ import { groups } from 'helpers/petGroups';
 import Badge from '../ui/Badge/Badge';
 import Like from '../ui/Like/Like';
 import getColorByBirthday from 'helpers/getColorByBirthday';
+import { ReactDivProps } from 'helpers/htmlPropTypes';
 
-interface CardPetPropsInterface extends React.HTMLAttributes<HTMLDivElement> {
+interface CardPetPropsInterface extends ReactDivProps {
   image: string;
   name: string;
   likes: number;

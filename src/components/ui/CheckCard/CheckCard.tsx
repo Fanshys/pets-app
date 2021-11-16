@@ -1,8 +1,8 @@
 import classNames from 'helpers/classNames';
+import { ReactInputProps } from 'helpers/htmlPropTypes';
 import './CheckCard.scss';
 
-interface CheckCardPropsInterface
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+interface CheckCardPropsInterface extends ReactInputProps {
   type?: 'checkbox' | 'radio';
   img?: string;
   text: string;
