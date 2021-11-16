@@ -1,11 +1,11 @@
 import './UiPage.scss';
-import Button from 'components/ui/Button/Button';
-import Input from 'components/ui/Input/Input';
-import Card from 'components/ui/Card/Card';
+import Button from 'components/_ui/Button/Button';
+import Input from 'components/_ui/Input/Input';
+import Card from 'components/_ui/Card/Card';
 import CardPet from 'components/CardPet/CardPet';
 
 import bob from 'assets/images/bob.jpg';
-import Badge from 'components/ui/Badge/Badge';
+import Badge from 'components/_ui/Badge/Badge';
 
 const nav: Array<string> = ['buttons', 'inputs', 'cards', 'badges'];
 

@@ -1,4 +1,4 @@
-import CheckCard from 'components/ui/CheckCard/CheckCard';
+import CheckCard from 'components/_ui/CheckCard/CheckCard';
 import { ChangeEventHandler } from 'react';
 import './PetsFilter.scss';
 

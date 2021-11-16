@@ -1,4 +1,4 @@
-import Alert from 'components/ui/Alert/Alert';
+import Alert from 'components/_ui/Alert/Alert';
 import { useAppSelector } from 'hooks';
 import './AlertBar.scss';
 

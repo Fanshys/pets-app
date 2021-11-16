@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { useAppSelector } from 'hooks';
-import LayoutDefault from 'layouts/LayoutDefault';
-import LayoutEmpty from 'layouts/LayoutEmpty';
+import LayoutDefault from 'components/_layouts/LayoutDefault';
+import LayoutEmpty from 'components/_layouts/LayoutEmpty';
 import { ComponentType } from 'react';
 import { RouteProps } from 'react-router';
 

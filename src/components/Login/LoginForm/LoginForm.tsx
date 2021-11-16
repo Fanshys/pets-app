@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import { userLogin } from 'store/actions/user';
 
 import './LoginForm.scss';
-import Button from 'components/ui/Button/Button';
-import Input from 'components/ui/Input/Input';
-import Form from 'components/ui/Form/Form';
+import Button from 'components/_ui/Button/Button';
+import Input from 'components/_ui/Input/Input';
+import Form from 'components/_ui/Form/Form';
 import { passwordRules, emailRules } from 'helpers/validation';
 
 interface LoginSubmitHandlerEvent extends SubmitEvent {

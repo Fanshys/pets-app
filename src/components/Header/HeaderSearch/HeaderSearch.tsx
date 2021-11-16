@@ -1,4 +1,4 @@
-import Input from '../../ui/Input/Input';
+import Input from '../../_ui/Input/Input';
 import './HeaderSearch.scss';
 
 const HeaderSearch = (): JSX.Element => {

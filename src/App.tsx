@@ -1,20 +1,24 @@
 import './assets/styles/main.scss';
+
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import firebase from 'firebase';
-
-import LayoutDefault from './layouts/LayoutDefault';
-import LayoutEmpty from './layouts/LayoutEmpty';
-
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-
-import AuthPage from './views/AuthPage/AuthPage';
-import HomePage from './views/HomePage/HomePage';
-import UiPage from './views/UiPage/UiPage';
 import { userTypes } from 'store/types';
 import { useDispatch } from 'react-redux';
-import AlertBar from 'components/AlertBar/AlertBar';
 import { useEffect } from 'react';
-import PetsPage from 'views/PetsPage/PetsPage';
+import firebase from 'firebase';
+
+// layouts
+import LayoutDefault from 'components/_layouts/LayoutDefault';
+import LayoutEmpty from 'components/_layouts/LayoutEmpty';
+
+// pages
+import AuthPage from 'components/_pages/AuthPage/AuthPage';
+import HomePage from 'components/_pages/HomePage/HomePage';
+import UiPage from 'components/_pages/UiPage/UiPage';
+import PetsPage from 'components/_pages/PetsPage/PetsPage';
+
+// components
+import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import AlertBar from 'components/AlertBar/AlertBar';
 
 function App() {
   const dispatch = useDispatch();

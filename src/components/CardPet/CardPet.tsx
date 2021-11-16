@@ -1,9 +1,9 @@
 import './CardPet.scss';
-import Button from 'components/ui/Button/Button';
-import Card from 'components/ui/Card/Card';
+import Button from 'components/_ui/Button/Button';
+import Card from 'components/_ui/Card/Card';
 import { groups } from 'helpers/petGroups';
-import Badge from '../ui/Badge/Badge';
-import Like from '../ui/Like/Like';
+import Badge from '../_ui/Badge/Badge';
+import Like from '../_ui/Like/Like';
 import getColorByBirthday from 'helpers/getColorByBirthday';
 import { ReactDivProps } from 'helpers/htmlPropTypes';
 
