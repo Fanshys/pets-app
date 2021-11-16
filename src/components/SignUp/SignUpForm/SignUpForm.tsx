@@ -7,7 +7,13 @@ import Input from 'components/ui/Input/Input';
 import Form from 'components/ui/Form/Form';
 import { nameRules, passwordRules, emailRules } from 'helpers/validation';
 
-const SignUpForm = () => {
+interface SignUpSubmitHandlerEvent extends SubmitEvent {
+  email: string;
+  password: string;
+  name: string;
+}
+
+const SignUpForm = (): JSX.Element => {
   const dispatch = useDispatch();
   const {
     register,
@@ -15,7 +21,7 @@ const SignUpForm = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e: SignUpSubmitHandlerEvent) => {
     dispatch(userRegister(e.email, e.password, e.name));
   };
 

@@ -2,7 +2,7 @@ import Button from '../ui/Button/Button';
 
 import './Auth.scss';
 
-const Auth = () => {
+const Auth = (): JSX.Element => {
   return (
     <div className="auth">
       <div className="auth__content">

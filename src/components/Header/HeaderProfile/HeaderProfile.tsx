@@ -3,7 +3,7 @@ import avatar from '../../../assets/images/smudge.png';
 import { useDispatch } from 'react-redux';
 import { userLogout } from 'store/actions/user';
 
-const HeaderProfile = () => {
+const HeaderProfile = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const onClickHandler = () => {

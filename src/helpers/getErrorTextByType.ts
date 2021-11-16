@@ -1,4 +1,4 @@
-export const getErrorTextByType = (type) => {
+export const getErrorTextByType = (type: string | undefined): string => {
   switch (type) {
     case 'auth/wrong-password':
       return 'Password is invalid';

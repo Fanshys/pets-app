@@ -2,7 +2,7 @@ import HelpTextForm from 'components/HelpTextForm/HelpTextForm';
 import './Login.scss';
 import LoginForm from './LoginForm/LoginForm';
 
-const LoginPage = () => {
+const LoginPage = (): JSX.Element => {
   return (
     <div className="login">
       <div className="login__content">

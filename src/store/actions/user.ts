@@ -2,9 +2,10 @@ import { userApi } from 'api/user.api';
 import { getErrorTextByType } from 'helpers/getErrorTextByType';
 import { userTypes } from '../types';
 import { alertCreate } from './alert';
+import firebase from 'firebase';
 
-export const userLogin = (email, password) => {
-  return async (dispatch) => {
+export const userLogin = (email: string, password: string) => {
+  return async (dispatch: Function) => {
     dispatch(request());
 
     const result = await userApi.login(email, password);
@@ -20,19 +21,19 @@ export const userLogin = (email, password) => {
     }
   };
 
-  function request(user) {
+  function request() {
     return { type: userTypes.LOGIN_REQUEST };
   }
-  function success(user) {
+  function success(user: firebase.User | null | undefined) {
     return { type: userTypes.LOGIN_SUCCESS, user };
   }
-  function failure(user) {
+  function failure() {
     return { type: userTypes.LOGIN_FAILURE };
   }
 };
 
-export const userRegister = (email, password, name) => {
-  return async (dispatch) => {
+export const userRegister = (email: string, password: string, name: string) => {
+  return async (dispatch: Function) => {
     dispatch(request());
 
     const result = await userApi.register(email, password, name);
@@ -48,29 +49,29 @@ export const userRegister = (email, password, name) => {
     }
   };
 
-  function request(user) {
+  function request() {
     return { type: userTypes.REGISTER_REQUEST };
   }
-  function success(user) {
+  function success(user: firebase.User | null | undefined) {
     return { type: userTypes.REGISTER_SUCCESS, user };
   }
-  function failure(user) {
+  function failure() {
     return { type: userTypes.REGISTER_FAILURE };
   }
 };
 
 export const userLogout = () => {
-  return async (dispatch) => {
+  return async (dispatch: Function) => {
     dispatch(request());
     await userApi.logout();
     localStorage.removeItem('user');
     dispatch(success());
   };
 
-  function request(user) {
+  function request() {
     return { type: userTypes.LOGOUT_REQUEST };
   }
-  function success(user) {
+  function success() {
     return { type: userTypes.LOGOUT_SUCCESS };
   }
 };

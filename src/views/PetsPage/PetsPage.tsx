@@ -1,7 +1,7 @@
 import './PetsPage.scss';
 import { RootState } from 'store/store';
 import { useAppSelector } from 'hooks';
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { getPets } from 'store/actions/pets';
 import { useDispatch } from 'react-redux';
 import PetsList from 'components/PetsList/PetsList';
@@ -19,7 +19,7 @@ const PetsPage = (): JSX.Element => {
   }, [dispatch]);
 
   const pets = useAppSelector((state: RootState) => state.pets.items);
-  const categories = [
+  const [categories, setCategories] = useState([
     {
       name: 'dogs',
       text: 'dogs',
@@ -62,12 +62,20 @@ const PetsPage = (): JSX.Element => {
       checked: false,
       value: '6',
     },
-  ];
+  ]);
 
   function categoryOnChange(e: ChangeEvent) {
     const target = e.target as HTMLInputElement;
 
-    console.log(target.value);
+    setCategories(
+      categories.map((category) => {
+        if (category.value === target.value) {
+          category.checked = !category.checked;
+        }
+
+        return category;
+      })
+    );
   }
 
   return (

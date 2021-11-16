@@ -1,31 +1,31 @@
 import { NavLink } from 'react-router-dom';
 import './HeaderMenu.scss';
 
-const menuItems = [
-  {
-    name: 'Dashboard',
-    link: '/',
-    exact: true,
-  },
-  {
-    name: 'Pets',
-    link: '/pets',
-  },
-  {
-    name: 'Favorites',
-    link: '/favorites',
-  },
-  {
-    name: 'Blog',
-    link: '/blog',
-  },
-  {
-    name: 'Ui',
-    link: '/ui',
-  },
-];
+const HeaderMenu = (): JSX.Element => {
+  const menuItems = [
+    {
+      name: 'Dashboard',
+      link: '/',
+      exact: true,
+    },
+    {
+      name: 'Pets',
+      link: '/pets',
+    },
+    {
+      name: 'Favorites',
+      link: '/favorites',
+    },
+    {
+      name: 'Blog',
+      link: '/blog',
+    },
+    {
+      name: 'Ui',
+      link: '/ui',
+    },
+  ];
 
-const HeaderMenu = () => {
   return (
     <nav className="header-menu">
       <ul className="header-menu__list">

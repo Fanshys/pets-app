@@ -2,7 +2,7 @@ import HelpTextForm from 'components/HelpTextForm/HelpTextForm';
 import './SignUp.scss';
 import SignUpForm from './SignUpForm/SignUpForm';
 
-const SignUp = () => {
+const SignUp = (): JSX.Element => {
   return (
     <div className="sign-up">
       <div className="sign-up__content">

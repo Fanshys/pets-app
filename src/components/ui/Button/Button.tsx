@@ -10,6 +10,7 @@ interface ButtonPropsInterface {
   to?: string;
   href?: string;
   className?: string;
+  type?: string;
   children?: string | JSX.Element | Array<JSX.Element>;
 }
 
@@ -29,14 +30,14 @@ const Button = ({
     [className]: className,
   });
 
-  let Tag;
+  let Tag: React.ElementType;
 
   if (rest.to) {
     Tag = Link;
   } else if (rest.href) {
-    Tag = 'a' as keyof JSX.IntrinsicElements;
+    Tag = 'a';
   } else {
-    Tag = 'button' as keyof JSX.IntrinsicElements;
+    Tag = 'button';
   }
 
   return (

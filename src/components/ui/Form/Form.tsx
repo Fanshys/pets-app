@@ -1,16 +1,11 @@
 import classNames from 'helpers/classNames';
 import './Form.scss';
 
-interface FormPropsInterface {
-  children?: JSX.Element | Array<JSX.Element>;
-  className?: string;
-}
-
 const Form = ({
   children,
   className = '',
   ...rest
-}: FormPropsInterface): JSX.Element => {
+}: React.FormHTMLAttributes<HTMLFormElement>): JSX.Element => {
   const classes = classNames({
     form: true,
     [className]: className,

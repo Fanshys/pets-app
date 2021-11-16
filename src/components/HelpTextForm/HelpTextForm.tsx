@@ -1,8 +1,17 @@
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import './HelpTextForm.scss';
 
-const HelpTextForm = ({ text, link, linkText }) => {
+interface HelpTextFormPropsInterface {
+  text: string;
+  link?: string;
+  linkText?: string;
+}
+
+const HelpTextForm = ({
+  text,
+  link,
+  linkText,
+}: HelpTextFormPropsInterface): JSX.Element => {
   return (
     <p className="help-text-form">
       {text}{' '}
@@ -13,12 +22,6 @@ const HelpTextForm = ({ text, link, linkText }) => {
       )}
     </p>
   );
-};
-
-HelpTextForm.propTypes = {
-  text: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  linkText: PropTypes.string,
 };
 
 export default HelpTextForm;

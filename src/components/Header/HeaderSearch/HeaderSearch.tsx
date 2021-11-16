@@ -1,7 +1,7 @@
 import Input from '../../ui/Input/Input';
 import './HeaderSearch.scss';
 
-const HeaderSearch = () => {
+const HeaderSearch = (): JSX.Element => {
   return (
     <div className="header-search">
       <form className="header-search__form">

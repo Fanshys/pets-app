@@ -1,8 +1,10 @@
 import { alertTypes } from '../types';
 
-interface AlertInterface {
+export type AlertType = 'error' | 'warning';
+
+export interface AlertInterface {
   text: string;
-  type: string;
+  type?: AlertType;
 }
 
 type alertStateType = Array<AlertInterface>;

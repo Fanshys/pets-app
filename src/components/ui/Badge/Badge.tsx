@@ -1,9 +1,10 @@
 import classNames from 'helpers/classNames';
+import { colors } from 'helpers/getColorByBirthday';
 import './Badge.scss';
 
 interface BadgePropsInterface {
   name: string;
-  color: 'orange' | 'purple';
+  color: colors;
   className?: string;
 }
 

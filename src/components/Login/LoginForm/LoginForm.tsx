@@ -8,7 +8,12 @@ import Input from 'components/ui/Input/Input';
 import Form from 'components/ui/Form/Form';
 import { passwordRules, emailRules } from 'helpers/validation';
 
-const LoginForm = () => {
+interface LoginSubmitHandlerEvent extends SubmitEvent {
+  email: string;
+  password: string;
+}
+
+const LoginForm = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const {
@@ -17,7 +22,7 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e: LoginSubmitHandlerEvent) => {
     dispatch(userLogin(e.email, e.password));
   };
 

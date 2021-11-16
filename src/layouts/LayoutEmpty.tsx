@@ -1,14 +1,13 @@
 import { Fragment } from 'react';
 import { Route } from 'react-router-dom';
-import Header from '../components/Header/Header';
+import { RouteProps } from 'react-router';
 
-const LayoutDefault = (props) => {
+const LayoutEmpty = (props: RouteProps) => {
   return (
     <Fragment>
-      <Header />
       <Route {...props} />
     </Fragment>
   );
 };
 
-export default LayoutDefault;
+export default LayoutEmpty;

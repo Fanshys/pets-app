@@ -1,9 +1,9 @@
 import Alert from 'components/ui/Alert/Alert';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from 'hooks';
 import './AlertBar.scss';
 
-const AlertBar = () => {
-  const alerts = useSelector((state) => state.alerts);
+const AlertBar = (): JSX.Element => {
+  const alerts = useAppSelector((state) => state.alerts);
 
   return (
     <div className="alert-bar">

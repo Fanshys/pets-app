@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './HeaderLogo.scss';
 import Logo from '../../../assets/images/logo.svg';
 
-const HeaderLogo = () => {
+const HeaderLogo = (): JSX.Element => {
   return (
     <Link to="/" className="header-logo">
       <img src={Logo} className="header-logo__img" alt="logo" />

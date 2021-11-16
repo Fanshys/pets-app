@@ -4,7 +4,7 @@ import HeaderMenu from './HeaderMenu/HeaderMenu';
 import HeaderProfile from './HeaderProfile/HeaderProfile';
 import HeaderSearch from './HeaderSearch/HeaderSearch';
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="container">

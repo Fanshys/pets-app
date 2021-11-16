@@ -1,13 +1,13 @@
 import classNames from 'helpers/classNames';
 import './Input.scss';
 
-interface InputPropsInterface {
-  label: string | JSX.Element | Array<JSX.Element>;
+interface InputPropsInterface
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string | JSX.Element | Array<JSX.Element>;
   error?: string;
   register?: object;
   small?: boolean;
   red?: boolean;
-  className?: string;
   inputClassName?: string;
 }
 
