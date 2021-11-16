@@ -1,4 +1,4 @@
-import Button from '../_ui/Button/Button';
+import Button from '../../../_ui/Button/Button';
 
 import './Auth.scss';
 
