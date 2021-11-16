@@ -6,7 +6,7 @@ import Badge from '../ui/Badge/Badge';
 import Like from '../ui/Like/Like';
 import getColorByBirthday from 'helpers/getColorByBirthday';
 
-interface CardPetPropsInterface {
+interface CardPetPropsInterface extends React.HTMLAttributes<HTMLDivElement> {
   image: string;
   name: string;
   likes: number;
@@ -24,9 +24,10 @@ const CardPet = ({
   isFavorite,
   group,
   birthday,
+  className = '',
 }: CardPetPropsInterface) => {
   return (
-    <Card>
+    <Card className={className}>
       <div className="card-pet">
         <div className="card-pet__img-wrap">
           <img src={image} alt="" className="card-pet__img" />

@@ -2,15 +2,13 @@ import './Alert.scss';
 import Card from '../Card/Card';
 import classNames from 'helpers/classNames';
 
-interface AlertPropsInterface {
-  text: string | JSX.Element | Array<JSX.Element>;
+interface AlertPropsInterface extends React.HTMLAttributes<HTMLDivElement> {
   type?: 'error' | 'warning';
-  className?: string;
 }
 
 function Alert({
   type,
-  text,
+  children,
   className = '',
 }: AlertPropsInterface): JSX.Element {
   const classes = classNames({
@@ -21,7 +19,7 @@ function Alert({
 
   return (
     <div className={classes}>
-      <Card>{text}</Card>
+      <Card>{children}</Card>
     </div>
   );
 }

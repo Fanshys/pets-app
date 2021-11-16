@@ -8,7 +8,9 @@ const AlertBar = (): JSX.Element => {
   return (
     <div className="alert-bar">
       {alerts.map((item, key) => (
-        <Alert key={key} text={item.text} type={item.type} />
+        <Alert key={key} type={item.type}>
+          {item.text}
+        </Alert>
       ))}
     </div>
   );

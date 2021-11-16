@@ -2,10 +2,9 @@ import classNames from 'helpers/classNames';
 import { colors } from 'helpers/getColorByBirthday';
 import './Badge.scss';
 
-interface BadgePropsInterface {
+interface BadgePropsInterface extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
   color: colors;
-  className?: string;
 }
 
 const Badge = ({

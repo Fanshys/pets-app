@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 import classNames from 'helpers/classNames';
 import './Button.scss';
 
-interface ButtonPropsInterface {
+interface ButtonPropsInterface extends React.HTMLAttributes<HTMLElement> {
   dark?: boolean;
   plus?: boolean;
   active?: boolean;
   to?: string;
   href?: string;
-  className?: string;
   type?: string;
-  children?: string | JSX.Element | Array<JSX.Element>;
 }
 
 const Button = ({

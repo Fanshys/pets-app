@@ -1,29 +1,21 @@
 import classNames from 'helpers/classNames';
-import { ChangeEventHandler } from 'react';
 import './CheckCard.scss';
 
-interface CheckCardPropsInterface {
+interface CheckCardPropsInterface
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   type?: 'checkbox' | 'radio';
-  name: string;
-  checked: boolean;
-  disabled?: boolean;
-  className?: string;
   img?: string;
   text: string;
-  value: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 const CheckCard = ({
   type = 'checkbox',
-  name,
   text,
   checked,
   disabled = false,
   className = '',
   img,
-  value,
-  onChange = () => {},
+  ...rest
 }: CheckCardPropsInterface): JSX.Element => {
   const classes = classNames({
     [className]: className,
@@ -38,11 +30,9 @@ const CheckCard = ({
       <input
         className="check-card__input hidden-visible"
         type={type}
-        name={name}
         checked={checked}
-        value={value}
         disabled={disabled}
-        onChange={onChange}
+        {...rest}
       />
       {img && <img src={img} alt={text} className="check-card__image" />}
       <span className="check-card__text">{text}</span>
