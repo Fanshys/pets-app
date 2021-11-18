@@ -1,6 +1,6 @@
 import classNames from 'helpers/classNames';
 import { colors } from 'helpers/getColorByBirthday';
-import { ReactDivProps } from 'helpers/htmlPropTypes';
+import { ReactDivProps } from 'helpers/ReactPropTypes';
 import './Badge.scss';
 
 interface BadgePropsInterface extends ReactDivProps {

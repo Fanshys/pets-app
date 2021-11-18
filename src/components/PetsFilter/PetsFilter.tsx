@@ -2,7 +2,7 @@ import CheckCard from 'components/_ui/CheckCard/CheckCard';
 import { ChangeEventHandler } from 'react';
 import './PetsFilter.scss';
 
-interface PetCategoryInterface {
+export interface PetCategoryInterface {
   text: string;
   name: string;
   value: string;

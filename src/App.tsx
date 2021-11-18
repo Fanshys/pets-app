@@ -14,11 +14,11 @@ import LayoutEmpty from 'components/_layouts/LayoutEmpty';
 import AuthPage from 'components/_pages/AuthPage/AuthPage';
 import HomePage from 'components/_pages/HomePage/HomePage';
 import UiPage from 'components/_pages/UiPage/UiPage';
-import PetsPage from 'components/_pages/PetsPage/PetsPage';
+import PetsPageContainer from 'components/_pages/PetsPage/PetsPageContainer';
 
 // components
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
-import AlertBar from 'components/AlertBar/AlertBar';
+import AlertBarContainer from 'components/AlertBar/AlertBarContainer';
 
 function App() {
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ function App() {
 
           <PrivateRoute
             path="/pets"
-            component={PetsPage}
+            component={PetsPageContainer}
             layout={LayoutDefault}
           />
 
@@ -69,7 +69,7 @@ function App() {
         </Switch>
       </main>
 
-      <AlertBar />
+      <AlertBarContainer />
     </Router>
   );
 }

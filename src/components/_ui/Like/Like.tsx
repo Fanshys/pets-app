@@ -1,5 +1,5 @@
 import classNames from 'helpers/classNames';
-import { ReactDivProps } from 'helpers/htmlPropTypes';
+import { ReactDivProps } from 'helpers/ReactPropTypes';
 import './Like.scss';
 
 interface LikePropsInterface extends ReactDivProps {

@@ -1,9 +1,10 @@
 import classNames from 'helpers/classNames';
-import { ReactInputProps } from 'helpers/htmlPropTypes';
+import { ReactInputProps } from 'helpers/ReactPropTypes';
+import { ReactNode } from 'react';
 import './Input.scss';
 
 interface InputPropsInterface extends ReactInputProps {
-  label?: string | JSX.Element | Array<JSX.Element>;
+  label?: ReactNode;
   error?: string;
   register?: object;
   small?: boolean;

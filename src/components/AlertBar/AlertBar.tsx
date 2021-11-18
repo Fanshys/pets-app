@@ -1,10 +1,13 @@
 import Alert from 'components/_ui/Alert/Alert';
-import { useAppSelector } from 'hooks';
+import { ReactDivProps } from 'helpers/ReactPropTypes';
+import { AlertInterface } from 'store/reducers/alertReducer';
 import './AlertBar.scss';
 
-const AlertBar = (): JSX.Element => {
-  const alerts = useAppSelector((state) => state.alerts);
+interface AlertBarPropsContainer extends ReactDivProps {
+  alerts: Array<AlertInterface>;
+}
 
+const AlertBar = ({ alerts }: AlertBarPropsContainer): JSX.Element => {
   return (
     <div className="alert-bar">
       {alerts.map((item, key) => (

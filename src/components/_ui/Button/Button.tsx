@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-
 import classNames from 'helpers/classNames';
+import { ReactDefaultProps } from 'helpers/ReactPropTypes';
+
 import './Button.scss';
 
-interface ButtonPropsInterface extends React.HTMLAttributes<HTMLElement> {
+interface ButtonPropsInterface extends ReactDefaultProps {
   dark?: boolean;
   plus?: boolean;
   active?: boolean;

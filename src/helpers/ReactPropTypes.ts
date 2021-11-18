@@ -17,3 +17,8 @@ export type ReactFormProps = React.DetailedHTMLProps<
   React.FormHTMLAttributes<HTMLFormElement>,
   HTMLFormElement
 >;
+
+export type ReactDefaultProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+>;

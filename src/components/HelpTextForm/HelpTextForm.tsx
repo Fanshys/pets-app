@@ -1,5 +1,5 @@
 import classNames from 'helpers/classNames';
-import { ReactParagraphProps } from 'helpers/htmlPropTypes';
+import { ReactParagraphProps } from 'helpers/ReactPropTypes';
 import { NavLink } from 'react-router-dom';
 import './HelpTextForm.scss';
 

@@ -1,5 +1,5 @@
 import classNames from 'helpers/classNames';
-import { ReactInputProps } from 'helpers/htmlPropTypes';
+import { ReactInputProps } from 'helpers/ReactPropTypes';
 import './CheckCard.scss';
 
 interface CheckCardPropsInterface extends ReactInputProps {

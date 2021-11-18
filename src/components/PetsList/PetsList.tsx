@@ -3,15 +3,17 @@ import Masonry from 'react-masonry-css';
 import CardPet from 'components/CardPet/CardPet';
 import { PetListInterface } from 'api/pets.api';
 import classNames from 'helpers/classNames';
-import { ReactDivProps } from 'helpers/htmlPropTypes';
+import { ReactDivProps } from 'helpers/ReactPropTypes';
 
 interface PetsListPropsInterface extends ReactDivProps {
   items: PetListInterface;
+  cols?: number;
 }
 
 const PetsList = ({
   items,
   className = '',
+  cols = 3,
 }: PetsListPropsInterface): JSX.Element => {
   const classes = classNames({
     [className]: className,
@@ -20,7 +22,7 @@ const PetsList = ({
 
   return (
     <Masonry
-      breakpointCols={3}
+      breakpointCols={cols}
       className={classes}
       columnClassName="pets-list__column"
     >

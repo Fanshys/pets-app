@@ -1,5 +1,5 @@
 import classNames from 'helpers/classNames';
-import { ReactFormProps } from 'helpers/htmlPropTypes';
+import { ReactFormProps } from 'helpers/ReactPropTypes';
 import './Form.scss';
 
 const Form = ({
